@@ -68,7 +68,7 @@ describe("hatchDigipet", () => {
   });
 });
 
-describe.skip("trainDigipet", () => {
+describe("trainDigipet", () => {
   it("increases digipet discipline by 10 and decreases happiness by 5", () => {
     // setup
     setDigipet(INITIAL_DIGIPET);
@@ -79,15 +79,15 @@ describe.skip("trainDigipet", () => {
 
     // assert
     expect(getDigipet()).toStrictEqual({
-      happiness: INITIAL_DIGIPET.happiness - 5,
+      happiness: 50,
       nutrition: INITIAL_DIGIPET.nutrition,
-      discipline: INITIAL_DIGIPET.discipline + 10,
+      discipline: 50
     });
   });
 
   it("cannot increase discipline past 100", () => {
     // setup
-    setDigipet({ happiness: 50, nutrition: 50, discipline: 95 });
+    setDigipet({ happiness: 50, nutrition: 50, discipline: 100 });
 
     // act
     trainDigipet();
