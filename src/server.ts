@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import { getDigipet } from "./digipet/model";
-import { hatchDigipet, walkDigipet } from "./digipet/controller";
+import { hatchDigipet, trainDigipet, walkDigipet } from "./digipet/controller";
 
 const app = express();
 
@@ -14,7 +14,8 @@ app.get("/", (req, res) => {
   res.json({
     message:
       "Welcome to Digipet, the totally original digital pet game! Keep your pet happy, healthy and well-disciplined to win the game. If in doubt, check out the /instructions endpoint!",
-  });
+    });
+    
 });
 
 app.get("/instructions", (req, res) => {
@@ -72,4 +73,17 @@ app.get("/digipet/walk", (req, res) => {
   }
 });
 
+app.get("/digipet/train", (req,res) => {
+  //check the user has a digitpet to train
+  if(getDigipet()) {
+    trainDigipet();
+    res.json({
+      message: "You trained your digipt. It looks healtheir now!"
+    });
+  }else {
+    res.json({
+      message: "You don't have a digitpet to train! Try hatching one with /digipet/hatch",
+    })
+  }
+})
 export default app;
