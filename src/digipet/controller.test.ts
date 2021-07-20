@@ -79,9 +79,9 @@ describe("trainDigipet", () => {
 
     // assert
     expect(getDigipet()).toStrictEqual({
-      happiness: 50,
+      happiness: INITIAL_DIGIPET.nutrition - 5,
       nutrition: INITIAL_DIGIPET.nutrition,
-      discipline: 50
+      discipline: INITIAL_DIGIPET.nutrition + 10
     });
   });
 

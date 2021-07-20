@@ -30,6 +30,7 @@ export function hatchDigipet(): Digipet {
 
 export function trainDigipet(): void {
   updateDigipetBounded("discipline", 10)
+  updateDigipetBounded("happiness", -5)
 }
 
 export function walkDigipet(): void {
