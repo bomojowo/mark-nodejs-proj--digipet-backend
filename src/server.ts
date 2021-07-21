@@ -111,16 +111,17 @@ app.get("/digipet/feed", (req, res) => {
 
 app.get("/digipet/ignore", (req, res) => {
   //check the user has a digipet to ignore
-  if(getDigipet()) {
+  if (getDigipet()) {
     //ignoreDigipet();
     res.json({
       message: "You ignored your digipet. It looks sad now",
       digipet: getDigipet(),
-    })
-  } else{
+    });
+  } else {
     res.json({
-      message: "You don't have a digipet to ignore. Try hatching one with /digipet/hatch",
-    })
+      message:
+        "You don't have a digipet to ignore. Try hatching one with /digipet/hatch",
+    });
   }
-})
+});
 export default app;

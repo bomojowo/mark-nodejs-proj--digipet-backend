@@ -5,7 +5,8 @@
     "start": "ts-node src",
     "start:dev": "ts-node-dev src",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "format": "prettier --write ."
   },
   "author": "",
   "license": "CC-BY-NC-ND-4.0",
