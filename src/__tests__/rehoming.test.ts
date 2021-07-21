@@ -6,7 +6,7 @@ import app from "../server";
  * This file has integration tests for rehoming a digipet.
  *
  * It is intended to test three behaviours:
- *  1. rehoming a digipet leads to the need to rehatch a new digipet
+ *  1. rehoming a digipet leads to the need to hatch a new digipet
  */
 
 describe("When a user rehomes a digipet, it removes the current digipet", () => {
@@ -26,7 +26,7 @@ describe("When a user rehomes a digipet, it removes the current digipet", () => 
     expect(response.body.digipet).toStrictEqual(undefined);
   });
 
-  test("1 GET /digipet/rehome informs them that new digipet needs rehatching", async () => {
+  test("1 GET /digipet/rehome informs them that new digipet needs hatching", async () => {
     const response = await supertest(app).get("/digipet/rehome");
     expect(response.body.message).toMatch(/hatching a digipet first/i);
   });

@@ -4,6 +4,7 @@ import {
   ignoreDigipet,
   trainDigipet,
   walkDigipet,
+  rehomeDigipet,
 } from "./controller";
 import { getDigipet, INITIAL_DIGIPET, setDigipet } from "./model";
 
@@ -199,3 +200,17 @@ describe("ignoreDigipet", () => {
     expect(getDigipet()).toHaveProperty("discipline", 0);
   });
 });
+
+describe("rehomeDigipet",  () => {
+  test("when there is a current digipet, it removes current digipet in order for you to hatch a new one", () => {
+    // setup
+    setDigipet(INITIAL_DIGIPET);
+
+    // act
+    rehomeDigipet();
+
+    // assert
+    expect(rehomeDigipet).toHaveProperty("digipet", undefined);
+    
+  });
+})
