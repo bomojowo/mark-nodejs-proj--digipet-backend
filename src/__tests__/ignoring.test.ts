@@ -1,4 +1,3 @@
-import { start } from "repl";
 import supertest from "supertest";
 import { Digipet, setDigipet } from "../digipet/model";
 import app from "../server";
@@ -23,7 +22,7 @@ describe("When a user ignores a digipet repeatedly, its dicipline decreases by 1
     setDigipet(startingDigipet);
   });
 
-  test("GET /digipet/ignore them that they have a digipet with expected stats", async () => {
+  test("GET /digipet/ignore informs them that they have a digipet with expected stats", async () => {
     const response = await supertest(app).get("/digipet");
     expect(response.body.message).toMatch(/your digipet/i);
     expect(response.body.digipet).toHaveProperty("discipline", 30);

@@ -43,3 +43,8 @@ export function ignoreDigipet(): void {
   updateDigipetBounded("happiness", -10);
   updateDigipetBounded("nutrition", -10);
 }
+
+export function rehomeDigipet(): void {
+  setDigipet(undefined);
+  // throw ("You have rehomed your old digipet and hatched a new one!");
+}

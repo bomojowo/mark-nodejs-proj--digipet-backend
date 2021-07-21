@@ -7,6 +7,7 @@ import {
   walkDigipet,
   feedDigipet,
   ignoreDigipet,
+  rehomeDigipet,
 } from "./digipet/controller";
 
 const app = express();
@@ -122,6 +123,23 @@ app.get("/digipet/ignore", (req, res) => {
     res.json({
       message:
         "You don't have a digipet to ignore. Try hatching one with /digipet/hatch",
+    });
+  }
+});
+
+app.get("/digipet/rehome", (req, res) => {
+  //check the user has a digitpet to rehome
+  if (getDigipet()) {
+    rehomeDigipet();
+    res.json({
+      message:
+        "You have rehomed your digipet. Hatch a new digipet with /digitpet/hatch",
+      digipet: undefined,
+    });
+  } else {
+    res.json({
+      message:
+        "You don't have a digipet to rehome. Try hatching a digipet first with /digipet/hatch",
     });
   }
 });
