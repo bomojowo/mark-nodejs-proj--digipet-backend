@@ -1,7 +1,12 @@
 import express from "express";
 import cors from "cors";
 import { getDigipet } from "./digipet/model";
-import { hatchDigipet, trainDigipet, walkDigipet, feedDigipet } from "./digipet/controller";
+import {
+  hatchDigipet,
+  trainDigipet,
+  walkDigipet,
+  feedDigipet,
+} from "./digipet/controller";
 
 const app = express();
 
@@ -14,8 +19,7 @@ app.get("/", (req, res) => {
   res.json({
     message:
       "Welcome to Digipet, the totally original digital pet game! Keep your pet happy, healthy and well-disciplined to win the game. If in doubt, check out the /instructions endpoint!",
-    });
-    
+  });
 });
 
 app.get("/instructions", (req, res) => {
@@ -75,31 +79,33 @@ app.get("/digipet/walk", (req, res) => {
 
 app.get("/digipet/train", (req, res) => {
   //check the user has a digitpet to train
-  if(getDigipet()) {
+  if (getDigipet()) {
     trainDigipet();
     res.json({
       message: "You trained your digipet. It looks healtheir now!",
       digipet: getDigipet(),
     });
-  }else {
+  } else {
     res.json({
-      message: "You don't have a digitpet to train! Try hatching one with /digipet/hatch",
-    })
+      message:
+        "You don't have a digitpet to train! Try hatching one with /digipet/hatch",
+    });
   }
-})
+});
 
 app.get("/digipet/feed", (req, res) => {
   //check the user has a digipet to train
-  if(getDigipet()) {
+  if (getDigipet()) {
     feedDigipet();
     res.json({
       message: "You feed your digipet. It looks content now",
       digipet: getDigipet(),
-    })
+    });
   } else {
     res.json({
-      messsgae: "You don't have a digitpet to train! Try hatching one with /digipet/hatch"
-    })
+      messsgae:
+        "You don't have a digitpet to train! Try hatching one with /digipet/hatch",
+    });
   }
-})
+});
 export default app;

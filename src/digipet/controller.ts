@@ -13,8 +13,8 @@ import {
  */
 
 export function feedDigipet(): void {
-  updateDigipetBounded("nutrition", 10)
-  updateDigipetBounded("discipline", -5)
+  updateDigipetBounded("nutrition", 10);
+  updateDigipetBounded("discipline", -5);
 }
 
 export function hatchDigipet(): Digipet {
@@ -29,13 +29,11 @@ export function hatchDigipet(): Digipet {
 }
 
 export function trainDigipet(): void {
-  updateDigipetBounded("discipline", 10)
-  updateDigipetBounded("happiness", -5)
+  updateDigipetBounded("discipline", 10);
+  updateDigipetBounded("happiness", -5);
 }
 
 export function walkDigipet(): void {
   updateDigipetBounded("happiness", 10);
   updateDigipetBounded("nutrition", -5);
 }
-
-

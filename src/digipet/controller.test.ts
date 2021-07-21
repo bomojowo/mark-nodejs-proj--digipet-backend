@@ -81,7 +81,7 @@ describe("trainDigipet", () => {
     expect(getDigipet()).toStrictEqual({
       happiness: INITIAL_DIGIPET.nutrition - 5,
       nutrition: INITIAL_DIGIPET.nutrition,
-      discipline: INITIAL_DIGIPET.nutrition + 10
+      discipline: INITIAL_DIGIPET.nutrition + 10,
     });
   });
 
