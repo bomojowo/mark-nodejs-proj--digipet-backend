@@ -6,6 +6,7 @@ import {
   trainDigipet,
   walkDigipet,
   feedDigipet,
+  ignoreDigipet,
 } from "./digipet/controller";
 
 const app = express();
@@ -112,7 +113,7 @@ app.get("/digipet/feed", (req, res) => {
 app.get("/digipet/ignore", (req, res) => {
   //check the user has a digipet to ignore
   if (getDigipet()) {
-    //ignoreDigipet();
+    ignoreDigipet();
     res.json({
       message: "You ignored your digipet. It looks sad now",
       digipet: getDigipet(),
