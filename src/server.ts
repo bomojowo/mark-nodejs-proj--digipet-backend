@@ -100,13 +100,13 @@ app.get("/digipet/feed", (req, res) => {
   if (getDigipet()) {
     feedDigipet();
     res.json({
-      message: "You feed your digipet. It looks content now",
+      message: "🌽You feed your digipet. It looks content now",
       digipet: getDigipet(),
     });
   } else {
     res.json({
       messsgae:
-        "🌽 You don't have a digitpet to train! Try hatching one with /digipet/hatch",
+        "You don't have a digitpet to train! Try hatching one with /digipet/hatch",
     });
   }
 });
@@ -133,7 +133,7 @@ app.get("/digipet/rehome", (req, res) => {
     rehomeDigipet();
     res.json({
       message:
-        "You have rehomed your digipet. Hatch a new digipet with /digitpet/hatch",
+        "You have rehomed your digipet and now have room for a new digipet. Hatch a new digipet with /digitpet/hatch",
       digipet: undefined,
     });
   } else {
