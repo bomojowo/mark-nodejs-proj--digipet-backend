@@ -57,7 +57,7 @@ app.get("/digipet/hatch", (req, res) => {
     const digipet = hatchDigipet();
     res.json({
       message:
-        "You have successfully hatched an adorable new digipet. Just the cutest.",
+        "🐣You have successfully hatched an adorable new digipet. Just the cutest.",
       digipet,
     });
   }
@@ -68,7 +68,7 @@ app.get("/digipet/walk", (req, res) => {
   if (getDigipet()) {
     walkDigipet();
     res.json({
-      message: "You walked your digipet. It looks happier now!",
+      message: "🐤You walked your digipet. It looks happier now!",
       digipet: getDigipet(),
     });
   } else {
@@ -106,7 +106,7 @@ app.get("/digipet/feed", (req, res) => {
   } else {
     res.json({
       messsgae:
-        "You don't have a digitpet to train! Try hatching one with /digipet/hatch",
+        "🌽 You don't have a digitpet to train! Try hatching one with /digipet/hatch",
     });
   }
 });
