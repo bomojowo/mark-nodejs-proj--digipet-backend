@@ -100,7 +100,7 @@ app.get("/digipet/feed", (req, res) => {
   if (getDigipet()) {
     feedDigipet();
     res.json({
-      message: "🌽You feed your digipet. It looks content now",
+      message: "🌽You fed your digipet. It looks content now",
       digipet: getDigipet(),
     });
   } else {
